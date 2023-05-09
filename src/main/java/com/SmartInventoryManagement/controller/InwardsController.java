@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.SmartInventoryManagement.entities.GodownInwardsEntity;
-
 import com.SmartInventoryManagement.service.InwardService;
 
 
@@ -25,12 +24,13 @@ import com.SmartInventoryManagement.service.InwardService;
 public class InwardsController {
     @Autowired
     private InwardService inwardservice;
+    
     @GetMapping
 	public List<GodownInwardsEntity> getAllInwards() {
 		return inwardservice.getAllInwards();
 	}
 	
-	@GetMapping("/{inwards_Id}")
+	@GetMapping("/{Id}")
 	public ResponseEntity<GodownInwardsEntity> getInwardsById(@PathVariable int Id) {
 		Optional<GodownInwardsEntity> optionalInwards = inwardservice.getInwardsById(Id);
 		if (optionalInwards.isPresent()) {
@@ -45,12 +45,12 @@ public class InwardsController {
 		inwardservice.addInwards(inwards);
 	}
 	
-	@PutMapping("/{inwards_Id}")
+	@PutMapping("/{Id}")
 	public void updateInwards(@PathVariable int Id, @RequestBody GodownInwardsEntity inwards) {
 		inwardservice.updateInwards(Id, inwards);
 	}
 	
-	@DeleteMapping("/{inwards_Id}")
+	@DeleteMapping("/{Id}")
 	public void deleteInwards(@PathVariable int Id) {
 		inwardservice.deleteInwards(Id);
 	}

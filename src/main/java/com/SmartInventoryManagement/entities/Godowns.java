@@ -1,5 +1,6 @@
 package com.SmartInventoryManagement.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -21,11 +22,11 @@ public class Godowns {
 	private Long godownItemsCount;
 	//private BigInteger image;
 	@Column(name=" start_date")
-	private LocalDateTime startDate;
-	public LocalDateTime getStartDate() {
+	private LocalDate startDate;
+	public LocalDate getStartDate() {
 		return startDate;
 	}
-	public void setStartDate(LocalDateTime startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 	public int getGodownid() {
@@ -54,7 +55,7 @@ public class Godowns {
 	}
 	
 
-	public Godowns(int godownid, String godownlocation, String godownmanager, Long godownItemsCount, LocalDateTime startDate) {
+	public Godowns(int godownid, String godownlocation, String godownmanager, Long godownItemsCount, LocalDate startDate) {
 		super();
 		this.godownid = godownid;
 		this.godownlocation = godownlocation;

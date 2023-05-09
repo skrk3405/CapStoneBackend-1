@@ -37,10 +37,11 @@ public class UserDetailsController {
 
 	
 	@GetMapping(path="/UserDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<com.SmartInventoryManagement.entities.UserDetails> getEmployees(@RequestHeader("Authorization")String Token) {
+	public List<com.SmartInventoryManagement.entities.UserDetails> getEmployees() {
 		//return employees;
 		return employeeRepository.findAll();
 	}
+	
 	@PostMapping(path="/UserDetails")
 	public void addEmployee(@RequestBody com.SmartInventoryManagement.entities.UserDetails e) {
 		//employees.add(e);

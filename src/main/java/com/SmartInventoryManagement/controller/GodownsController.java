@@ -21,6 +21,8 @@ import com.SmartInventoryManagement.entities.Godowns;
 import com.SmartInventoryManagement.service.GodownService;
 
 
+
+
 @RestController
 @RequestMapping("/api/godowns")
 public class GodownsController {
@@ -32,7 +34,7 @@ public class GodownsController {
 		return godownsService.getAllGodowns();
 	}
 	
-	@GetMapping("/{godown_Id}")
+	@GetMapping("/{Id}")
 	public ResponseEntity<Godowns> getGodownsById(@PathVariable int Id) {
 		Optional<Godowns> optionalGodowns = godownsService.getGodownsById(Id);
 		if (optionalGodowns.isPresent()) {
@@ -47,10 +49,10 @@ public class GodownsController {
 		godownsService.addGodowns(godowns);
 	}
 	
-	//@PutMapping("/{godown_Id}")
-	//public void updateGodowns1(@PathVariable int godown_Id, @RequestBody Godowns godowns) {
-	//	godownsService.updateGodowns(godown_Id, godowns);
-	//}
+	@PutMapping("/{godown_Id}")
+	public void updateGodowns1(@PathVariable int godown_Id, @RequestBody Godowns godowns) {
+		godownsService.updateGodowns(godown_Id, godowns);
+	}
 	
 	@PatchMapping("/{Id}")
 	public void updateGodowns(@PathVariable int Id, @RequestBody Godowns godowns) {

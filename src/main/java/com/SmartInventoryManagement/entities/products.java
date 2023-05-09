@@ -14,7 +14,7 @@ public class products {
 	private int id;
 	private String name;
 	private String availCount;
-	private LinkedList<String> inGodowns;
+	private String inGodowns;
 	public int getId() {
 		return id;
 	}
@@ -33,13 +33,13 @@ public class products {
 	public void setAvailCount(String availCount) {
 		this.availCount = availCount;
 	}
-	public LinkedList<String> getInGodowns() {
+	public String getInGodowns() {
 		return inGodowns;
 	}
-	public void setInGodowns(LinkedList<String> inGodowns) {
+	public void setInGodowns(String inGodowns) {
 		this.inGodowns = inGodowns;
 	}
-	public products(int id, String name, String availCount, LinkedList<String> inGodowns) {
+	public products(int id, String name, String availCount, String inGodowns) {
 		super();
 		this.id = id;
 		this.name = name;

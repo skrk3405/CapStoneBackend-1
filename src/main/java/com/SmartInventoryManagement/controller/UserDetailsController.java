@@ -42,6 +42,18 @@ public class UserDetailsController {
 		return employeeRepository.findAll();
 	}
 	
+	@GetMapping(path = "/UserDetails/{email}/{password}")
+	public com.SmartInventoryManagement.entities.UserDetails getByUsernameAndPassword(@PathVariable String email, @PathVariable String password) {
+		Optional<com.SmartInventoryManagement.entities.UserDetails> userFound = employeeRepository.findByEmail(email);
+		if(userFound.isPresent() && userFound.get().getPassword().equals(password)) {
+			com.SmartInventoryManagement.entities.UserDetails user = userFound.get();
+			return user;
+		}
+		
+		return new com.SmartInventoryManagement.entities.UserDetails();
+		
+	}
+	
 	@PostMapping(path="/UserDetails")
 	public void addEmployee(@RequestBody com.SmartInventoryManagement.entities.UserDetails e) {
 		//employees.add(e);

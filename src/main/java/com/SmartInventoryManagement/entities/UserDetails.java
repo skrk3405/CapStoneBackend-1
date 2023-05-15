@@ -17,7 +17,7 @@ public class UserDetails {
 	private int userid;
 	private String password;
 	private String username;
-	private String Email;
+	private String email;
 	public int getUserid() {
 		return userid;
 	}
@@ -38,17 +38,17 @@ public class UserDetails {
 	}
 	
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		email = email;
 	}
 	public UserDetails(int userid, String password, String username,String Email) {
 		super();
 		this.userid = userid;
 		this.password = password;
 		this.username = username;
-		this.Email = Email;
+		this.email = email;
 		
 	}
 	public UserDetails() {
@@ -57,7 +57,7 @@ public class UserDetails {
 	@Override
 	public String toString() {
 		return "UserDetails [userid=" + userid + ", password=" + password + ", username=" + username + ", Email="
-				+ Email + "]";
+				+ email + "]";
 	}
 	
 }
